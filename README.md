@@ -12,12 +12,13 @@ Original inspiration:
 ```bash
 # Clone the repository
 git clone git@github.com:sontek/sontek-skills.git ~/sontek-skills
+```
 
-# Add the local marketplace
-claude --run "/plugin marketplace add ~/sontek-skills"
+Then **inside Claude Code**, run these slash commands:
 
-# Install the plugin
-claude --run "/plugin install sontek-skills@sontek-skills-local"
+```
+/plugin marketplace add ~/sontek-skills
+/plugin install sontek-skills@sontek-skills-local
 ```
 
 After installation, restart Claude Code. The skills will be automatically
@@ -32,9 +33,10 @@ claude --plugin-dir ~/sontek-skills
 
 ### Updating
 
-```bash
-# Update the plugin
-claude --run "/plugin update sontek-skills@sontek-skills-local"
+Inside Claude Code, run:
+
+```
+/plugin update sontek-skills@sontek-skills-local
 ```
 
 Or use `/plugin` to open the interactive plugin manager.
