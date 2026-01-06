@@ -3,15 +3,14 @@
 A collection of agent skills for, primarily designed for
 [Claude Code](https://claude.ai/claude-code).
 
-This repository is structured as a Claude Code plugin (see
-`plugins/sontek-skills/`), but the skills themselves follow the open
+This repository is structured as a Claude Code plugin with skills following the open
 [Agent Skills specification](https://agentskills.io) format to maintain
 compatibility with other tools that adopt the standard.
 
 ## Structure
 
 ```
-plugins/sontek-skills/skills/<skill-name>/SKILL.md
+skills/<skill-name>/SKILL.md
 ```
 
 Each skill is a directory containing a `SKILL.md` file with YAML frontmatter
@@ -19,7 +18,7 @@ Each skill is a directory containing a `SKILL.md` file with YAML frontmatter
 
 ## Creating a Skill
 
-1. Create `plugins/sontek-skills/skills/<skill-name>/SKILL.md`
+1. Create `skills/<skill-name>/SKILL.md`
 2. Add YAML frontmatter (see below)
 3. Write clear instructions in markdown
 4. Update `README.md` to include the new skill in the Available Skills table

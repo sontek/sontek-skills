@@ -13,32 +13,42 @@ Original inspiration:
 # Clone the repository
 git clone git@github.com:sontek/sontek-skills.git ~/sontek-skills
 
-# Install the plugin directly
-claude plugin install ~/sontek-skills
+# Add the local marketplace
+claude --run "/plugin marketplace add ~/sontek-skills"
+
+# Install the plugin
+claude --run "/plugin install sontek-skills@sontek-skills-local"
 ```
 
 After installation, restart Claude Code. The skills will be automatically
 invoked when relevant to your task.
 
+### Quick Test (No Installation)
+
+```bash
+# Run Claude Code with the plugin directory directly
+claude --plugin-dir ~/sontek-skills
+```
+
 ### Updating
 
 ```bash
 # Update the plugin
-claude plugin update sontek-skills@sontek-skills
+claude --run "/plugin update sontek-skills@sontek-skills-local"
 ```
 
 Or use `/plugin` to open the interactive plugin manager.
 
 ## Available Skills
 
-| Skill                                                            | Description                                               |
-| ---------------------------------------------------------------- | --------------------------------------------------------- |
-| [code-review](plugins/sontek-skills/skills/code-review/SKILL.md) | Code review guidelines and checklist                      |
-| [commit](plugins/sontek-skills/skills/commit/SKILL.md)           | Commit message conventions                                |
-| [create-pr](plugins/sontek-skills/skills/create-pr/SKILL.md)     | Create pull requests following conventions                |
-| [deslop](plugins/sontek-skills/skills/deslop/SKILL.md)           | Remove AI-generated code slop from branch changes         |
-| [find-bugs](plugins/sontek-skills/skills/find-bugs/SKILL.md)     | Find bugs and security vulnerabilities in branch changes  |
-| [iterate-pr](plugins/sontek-skills/skills/iterate-pr/SKILL.md)   | Iterate on a PR until CI passes and feedback is addressed |
+| Skill                                        | Description                                               |
+| -------------------------------------------- | --------------------------------------------------------- |
+| [code-review](skills/code-review/SKILL.md)   | Code review guidelines and checklist                      |
+| [commit](skills/commit/SKILL.md)             | Commit message conventions                                |
+| [create-pr](skills/create-pr/SKILL.md)       | Create pull requests following conventions                |
+| [deslop](skills/deslop/SKILL.md)             | Remove AI-generated code slop from branch changes         |
+| [find-bugs](skills/find-bugs/SKILL.md)       | Find bugs and security vulnerabilities in branch changes  |
+| [iterate-pr](skills/iterate-pr/SKILL.md)     | Iterate on a PR until CI passes and feedback is addressed |
 
 ## Creating New Skills
 
@@ -48,10 +58,10 @@ requires a `SKILL.md` file with YAML frontmatter.
 
 ### Skill Template
 
-Create a new directory under `plugins/sontek-skills/skills/`:
+Create a new directory under `skills/`:
 
 ```
-plugins/sontek-skills/skills/my-skill/
+skills/my-skill/
 └── SKILL.md
 ```
 

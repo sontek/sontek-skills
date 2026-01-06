@@ -1,0 +1,9 @@
+{
+  "name": "sontek-skills",
+  "description": "Agent skills for code review, commits, PRs, bug finding, and code cleanup",
+  "version": "1.0.0",
+  "author": {
+    "name": "sontek"
+  },
+  "license": "MPL-2.0"
+}
