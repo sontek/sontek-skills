@@ -1,11 +1,11 @@
 {
-  "name": "sontek-skills-local",
+  "name": "agent-skills-local",
   "owner": {
     "name": "sontek"
   },
   "plugins": [
     {
-      "name": "sontek-skills",
+      "name": "agent-skills",
       "source": "./",
       "description": "Agent skills for code review, commits, PRs, bug finding, and code cleanup",
       "version": "1.0.0",

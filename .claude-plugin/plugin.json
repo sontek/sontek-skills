@@ -1,5 +1,5 @@
 {
-  "name": "sontek-skills",
+  "name": "agent-skills",
   "description": "Agent skills for code review, commits, PRs, bug finding, and code cleanup",
   "version": "1.0.0",
   "author": {

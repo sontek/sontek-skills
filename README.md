@@ -1,9 +1,9 @@
-# Sentry Skills
+# Agent Skills
 
 Agent skills, following the [Agent Skills](https://agentskills.io) open format.
 
 Original inspiration:
-- https://github.com/getsentry/sentry-skills/tree/main
+- https://github.com/getsentry/skills/tree/main
 
 ## Installation
 
@@ -11,14 +11,14 @@ Original inspiration:
 
 ```bash
 # Clone the repository
-git clone git@github.com:sontek/sontek-skills.git ~/sontek-skills
+git clone git@github.com:sontek/agent-skills.git ~/agent-skills
 ```
 
 Then **inside Claude Code**, run these slash commands:
 
 ```
-/plugin marketplace add ~/sontek-skills
-/plugin install sontek-skills@sontek-skills-local
+/plugin marketplace add ~/agent-skills
+/plugin install agent-skills@agent-skills-local
 ```
 
 After installation, restart Claude Code. The skills will be automatically
@@ -28,7 +28,7 @@ invoked when relevant to your task.
 
 ```bash
 # Run Claude Code with the plugin directory directly
-claude --plugin-dir ~/sontek-skills
+claude --plugin-dir ~/agent-skills
 ```
 
 ### Updating
@@ -36,7 +36,7 @@ claude --plugin-dir ~/sontek-skills
 Inside Claude Code, run:
 
 ```
-/plugin update sontek-skills@sontek-skills-local
+/plugin update agent-skills@agent-skills-local
 ```
 
 Or use `/plugin` to open the interactive plugin manager.

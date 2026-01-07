@@ -1,6 +1,6 @@
-# Sentry Agent Skills
+# Agent Skills
 
-A collection of agent skills for, primarily designed for
+A collection of agent skills primarily designed for
 [Claude Code](https://claude.ai/claude-code).
 
 This repository is structured as a Claude Code plugin with skills following the open
