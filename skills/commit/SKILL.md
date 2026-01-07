@@ -18,6 +18,48 @@ Follow these conventions when creating commits.
 - Stay focused on the specific task
 - Don't break existing functionality without asking
 
+## Branch Management
+
+Before committing, always verify you're on the correct branch.
+
+### Check Current Branch
+
+```bash
+# Check current branch
+git branch --show-current
+```
+
+### Create Feature Branch
+
+**If on `main` or `master`, create a feature branch first:**
+
+Branch naming should follow the pattern: `<type>/<short-description>` where type matches the commit type:
+
+- `feat/add-user-auth` - New feature
+- `fix/null-pointer-error` - Bug fix
+- `ref/extract-validation` - Refactoring
+- `perf/optimize-queries` - Performance improvement
+- `docs/update-readme` - Documentation
+- `test/add-integration-tests` - Tests
+- `chore/update-deps` - Maintenance
+
+```bash
+# Create and switch to new branch
+git checkout -b <type>/<short-description>
+```
+
+**Example:**
+```bash
+# Bad - committing directly to main
+git branch --show-current  # main
+git commit -m "feat: Add user authentication"  # Don't do this!
+
+# Good - create feature branch first
+git branch --show-current  # main
+git checkout -b feat/add-user-auth
+git commit -m "feat(auth): Add user authentication"
+```
+
 ## Commit Workflow
 
 ### 1. Review Changes
@@ -393,6 +435,7 @@ These require interactive terminal input which is not supported. Use specific fi
 
 Before committing, verify:
 
+- [ ] On correct branch (not `main` or `master` unless explicitly intended)
 - [ ] Changes are related to a single logical change (atomic commit)
 - [ ] All changes are intentional (no debug code, console.logs)
 - [ ] No secrets, credentials, or sensitive data
