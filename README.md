@@ -43,14 +43,15 @@ Or use `/plugin` to open the interactive plugin manager.
 
 ## Available Skills
 
-| Skill                                                              | Description                                               |
-| ------------------------------------------------------------------ | --------------------------------------------------------- |
-| [code-review](plugins/agent-skills/skills/code-review/SKILL.md)   | Code review guidelines and checklist                      |
-| [commit](plugins/agent-skills/skills/commit/SKILL.md)             | Commit message conventions                                |
-| [create-pr](plugins/agent-skills/skills/create-pr/SKILL.md)       | Create pull requests following conventions                |
-| [deslop](plugins/agent-skills/skills/deslop/SKILL.md)             | Remove AI-generated code slop from branch changes         |
-| [find-bugs](plugins/agent-skills/skills/find-bugs/SKILL.md)       | Find bugs and security vulnerabilities in branch changes  |
-| [iterate-pr](plugins/agent-skills/skills/iterate-pr/SKILL.md)     | Iterate on a PR until CI passes and feedback is addressed |
+| Skill                                                                          | Description                                               |
+| ------------------------------------------------------------------------------ | --------------------------------------------------------- |
+| [code-review](plugins/agent-skills/skills/code-review/SKILL.md)               | Code review guidelines and checklist                      |
+| [commit](plugins/agent-skills/skills/commit/SKILL.md)                         | Commit message conventions                                |
+| [create-pr](plugins/agent-skills/skills/create-pr/SKILL.md)                   | Create pull requests following conventions                |
+| [deslop](plugins/agent-skills/skills/deslop/SKILL.md)                         | Remove AI-generated code slop from branch changes         |
+| [find-bugs](plugins/agent-skills/skills/find-bugs/SKILL.md)                   | Find bugs and security vulnerabilities in branch changes  |
+| [implementation-plan](plugins/agent-skills/skills/implementation-plan/SKILL.md)| Create structured plans for complex multi-phase work      |
+| [iterate-pr](plugins/agent-skills/skills/iterate-pr/SKILL.md)                 | Iterate on a PR until CI passes and feedback is addressed |
 
 ## Creating New Skills
 
