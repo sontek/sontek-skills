@@ -28,7 +28,7 @@ invoked when relevant to your task.
 
 ```bash
 # Run Claude Code with the plugin directory directly
-claude --plugin-dir ~/agent-skills
+claude --plugin-dir ~/agent-skills/plugins/agent-skills
 ```
 
 ### Updating
@@ -43,14 +43,14 @@ Or use `/plugin` to open the interactive plugin manager.
 
 ## Available Skills
 
-| Skill                                        | Description                                               |
-| -------------------------------------------- | --------------------------------------------------------- |
-| [code-review](skills/code-review/SKILL.md)   | Code review guidelines and checklist                      |
-| [commit](skills/commit/SKILL.md)             | Commit message conventions                                |
-| [create-pr](skills/create-pr/SKILL.md)       | Create pull requests following conventions                |
-| [deslop](skills/deslop/SKILL.md)             | Remove AI-generated code slop from branch changes         |
-| [find-bugs](skills/find-bugs/SKILL.md)       | Find bugs and security vulnerabilities in branch changes  |
-| [iterate-pr](skills/iterate-pr/SKILL.md)     | Iterate on a PR until CI passes and feedback is addressed |
+| Skill                                                              | Description                                               |
+| ------------------------------------------------------------------ | --------------------------------------------------------- |
+| [code-review](plugins/agent-skills/skills/code-review/SKILL.md)   | Code review guidelines and checklist                      |
+| [commit](plugins/agent-skills/skills/commit/SKILL.md)             | Commit message conventions                                |
+| [create-pr](plugins/agent-skills/skills/create-pr/SKILL.md)       | Create pull requests following conventions                |
+| [deslop](plugins/agent-skills/skills/deslop/SKILL.md)             | Remove AI-generated code slop from branch changes         |
+| [find-bugs](plugins/agent-skills/skills/find-bugs/SKILL.md)       | Find bugs and security vulnerabilities in branch changes  |
+| [iterate-pr](plugins/agent-skills/skills/iterate-pr/SKILL.md)     | Iterate on a PR until CI passes and feedback is addressed |
 
 ## Creating New Skills
 
@@ -60,10 +60,10 @@ requires a `SKILL.md` file with YAML frontmatter.
 
 ### Skill Template
 
-Create a new directory under `skills/`:
+Create a new directory under `plugins/agent-skills/skills/`:
 
 ```
-skills/my-skill/
+plugins/agent-skills/skills/my-skill/
 └── SKILL.md
 ```
 

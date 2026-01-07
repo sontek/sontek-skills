@@ -6,7 +6,7 @@
   "plugins": [
     {
       "name": "agent-skills",
-      "source": "./",
+      "source": "./plugins/agent-skills",
       "description": "Agent skills for code review, commits, PRs, bug finding, and code cleanup",
       "version": "1.0.0",
       "license": "MPL-2.0"
