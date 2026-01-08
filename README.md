@@ -47,6 +47,7 @@ Or use `/plugin` to open the interactive plugin manager.
 | ------------------------------------------------------------------------------ | --------------------------------------------------------- |
 | [code-review](plugins/agent-skills/skills/code-review/SKILL.md)               | Code review guidelines and checklist                      |
 | [commit](plugins/agent-skills/skills/commit/SKILL.md)                         | Commit message conventions                                |
+| [create-branch](plugins/agent-skills/skills/create-branch/SKILL.md)           | Create git branches following naming conventions          |
 | [create-pr](plugins/agent-skills/skills/create-pr/SKILL.md)                   | Create pull requests following conventions                |
 | [deslop](plugins/agent-skills/skills/deslop/SKILL.md)                         | Remove AI-generated code slop from branch changes         |
 | [find-bugs](plugins/agent-skills/skills/find-bugs/SKILL.md)                   | Find bugs and security vulnerabilities in branch changes  |

@@ -31,24 +31,22 @@ git branch --show-current
 
 ### Create Feature Branch
 
-**If on `main` or `master`, create a feature branch first:**
+**CRITICAL: If on `main` or `master`, you MUST create a feature branch first before committing.**
 
-Branch naming should follow the pattern: `<type>/<short-description>` where type matches the commit type:
-
-- `feat/add-user-auth` - New feature
-- `fix/null-pointer-error` - Bug fix
-- `ref/extract-validation` - Refactoring
-- `perf/optimize-queries` - Performance improvement
-- `docs/update-readme` - Documentation
-- `test/add-integration-tests` - Tests
-- `chore/update-deps` - Maintenance
+Branch names follow the pattern: `<type>/<short-description>`
+- Type matches commit type (feat, fix, ref, test, etc.)
+- Description is 2-4 words, lowercase, hyphen-separated
+- Examples: `feat/add-user-auth`, `fix/null-pointer`, `ref/extract-validation`
 
 ```bash
 # Create and switch to new branch
 git checkout -b <type>/<short-description>
 ```
 
+See the **create-branch** skill for complete branch naming conventions.
+
 **Example:**
+
 ```bash
 # Bad - committing directly to main
 git branch --show-current  # main
@@ -81,6 +79,7 @@ git log --oneline -10
 ```
 
 **Verify:**
+
 - All changes are related to a single logical change
 - No unintended changes are included
 - No debug code, console.logs, or temporary changes
@@ -107,6 +106,7 @@ Follow the format below, ensuring the message clearly explains what and why.
 ### 4. Verify the Commit
 
 After committing:
+
 ```bash
 # Verify the commit looks correct
 git show
@@ -134,44 +134,47 @@ git log -1
 - **Blank line**: Required between subject and body
 - **Blank line**: Required before footer
 
-**Note:** While conventional commits allow up to 100 characters, limiting to 50-72
-makes messages more readable in terminal, GitHub UI, and git log outputs.
+**Note:** While conventional commits allow up to 100 characters, limiting to
+50-72 makes messages more readable in terminal, GitHub UI, and git log outputs.
 
 ## Commit Types
 
 Choose the type that best describes your change:
 
-| Type      | When to Use                                                     |
-| --------- | --------------------------------------------------------------- |
-| `feat`    | New feature or functionality for users                          |
-| `fix`     | Bug fix that corrects incorrect behavior                        |
-| `ref`     | Code refactoring with no behavior change                        |
-| `perf`    | Performance improvement (faster, less memory, etc.)             |
-| `docs`    | Documentation changes only (README, comments, etc.)             |
-| `test`    | Adding or correcting tests                                      |
-| `build`   | Build system, dependencies, or tooling (npm, webpack, etc.)    |
-| `ci`      | CI/CD configuration (GitHub Actions, Jenkins, etc.)            |
-| `chore`   | Maintenance tasks, cleanup, or housekeeping                    |
-| `style`   | Code formatting, white space, missing semicolons (no logic)    |
-| `revert`  | Reverts a previous commit                                       |
-| `meta`    | Repository metadata (package.json version, etc.)               |
-| `license` | License changes                                                 |
+| Type      | When to Use                                                 |
+| --------- | ----------------------------------------------------------- |
+| `feat`    | New feature or functionality for users                      |
+| `fix`     | Bug fix that corrects incorrect behavior                    |
+| `ref`     | Code refactoring with no behavior change                    |
+| `perf`    | Performance improvement (faster, less memory, etc.)         |
+| `docs`    | Documentation changes only (README, comments, etc.)         |
+| `test`    | Adding or correcting tests                                  |
+| `build`   | Build system, dependencies, or tooling (npm, webpack, etc.) |
+| `ci`      | CI/CD configuration (GitHub Actions, Jenkins, etc.)         |
+| `chore`   | Maintenance tasks, cleanup, or housekeeping                 |
+| `style`   | Code formatting, white space, missing semicolons (no logic) |
+| `revert`  | Reverts a previous commit                                   |
+| `meta`    | Repository metadata (package.json version, etc.)            |
+| `license` | License changes                                             |
 
 ### Type Selection Guide
 
 **Use `feat` when:**
+
 - Adding a new user-facing feature
 - Adding a new API endpoint
 - Adding a new command or option
 - Introducing new functionality
 
 **Use `fix` when:**
+
 - Correcting a bug or error
 - Fixing incorrect behavior
 - Resolving a regression
 - Addressing a reported issue
 
 **Use `ref` when:**
+
 - Extracting a function or class
 - Renaming for clarity
 - Restructuring code organization
@@ -179,6 +182,7 @@ Choose the type that best describes your change:
 - No observable behavior changes
 
 **Use `perf` when:**
+
 - Optimizing algorithms
 - Reducing memory usage
 - Improving query performance
@@ -231,7 +235,8 @@ The body provides detailed context about the change.
 - Wrap at 72 characters
 - Use imperative mood
 - Be concise and direct - no fluff
-- Always include body for: features, non-obvious fixes, breaking changes, performance improvements
+- Always include body for: features, non-obvious fixes, breaking changes,
+  performance improvements
 - Body optional for: docs, typos, simple tests
 
 ### Body Examples
@@ -290,6 +295,7 @@ Refs #1234           # References issue (no close)
 ```
 
 **When to use:**
+
 - `Fixes`/`Closes`/`Resolves`: Automatically closes the issue when merged
 - `Refs`: Links to issue without closing (for related work)
 
@@ -303,6 +309,7 @@ Co-authored-by: John Doe <john@users.noreply.github.com>
 ```
 
 **When to include:**
+
 - Pair programming sessions
 - Code from code review suggestions
 - Significant contributions from others
@@ -387,29 +394,32 @@ Co-authored-by: John Doe <john@example.com>
 Each commit should represent a single logical change:
 
 **Good (atomic):**
+
 - One commit: "feat(auth): Add OAuth2 support"
 - Next commit: "test(auth): Add OAuth2 integration tests"
 - Next commit: "docs: Update authentication documentation"
 
 **Bad (not atomic):**
+
 - One commit: "Add OAuth2, fix unrelated bug, update docs, refactor utils"
 
 ### Principles
 
-- **Atomic**: One logical change per commit (easier to review, revert, cherry-pick, debug)
+- **Atomic**: One logical change per commit (easier to review, revert,
+  cherry-pick, debug)
 - **Working state**: Code compiles and tests pass after each commit
 - **Self-contained**: Each commit makes sense independently with clear message
 
 ## Common Mistakes to Avoid
 
-| Mistake       | Bad Example                      | Good Example                            |
-| ------------- | -------------------------------- | --------------------------------------- |
-| Too vague     | `fix: bug fix`                   | `fix(auth): Prevent double login`       |
-| Wrong tense   | `feat: Added feature`            | `feat: Add feature`                     |
-| Too long      | `feat: Add endpoint for X, Y, Z` | Use body for details                    |
-| No context    | `fix: Fix bug` (no body)         | Include body explaining what/why        |
-| Too verbose   | Long narrative in body           | Concise facts: what changed and why     |
-| Not imperative| `fixing`, `fixed`, `adds`        | `fix`, `add`, `update`                  |
+| Mistake        | Bad Example                      | Good Example                        |
+| -------------- | -------------------------------- | ----------------------------------- |
+| Too vague      | `fix: bug fix`                   | `fix(auth): Prevent double login`   |
+| Wrong tense    | `feat: Added feature`            | `feat: Add feature`                 |
+| Too long       | `feat: Add endpoint for X, Y, Z` | Use body for details                |
+| No context     | `fix: Fix bug` (no body)         | Include body explaining what/why    |
+| Too verbose    | Long narrative in body           | Concise facts: what changed and why |
+| Not imperative | `fixing`, `fixed`, `adds`        | `fix`, `add`, `update`              |
 
 ## Tool Usage
 
@@ -419,23 +429,26 @@ When creating commits:
 - **Use `git diff`** to review all changes before staging
 - **Use `git diff --cached`** to review staged changes before committing
 - **Use `git log --oneline -10`** to see recent commit message style
-- **Use specific file paths** when staging subset of changes: `git add path/to/file`
+- **Use specific file paths** when staging subset of changes:
+  `git add path/to/file`
 - **Use `git show`** after committing to verify the commit looks correct
 - **Use `git commit --amend`** ONLY for the most recent unpushed commit
 
 **Do NOT use interactive commands:**
+
 - ❌ `git add -i` - interactive staging
 - ❌ `git add -p` - patch mode
 - ❌ `git rebase -i` - interactive rebase
 - ❌ Any command with `-i` or `--interactive` flag
 
-These require interactive terminal input which is not supported. Use specific file paths with `git add` instead.
+These require interactive terminal input which is not supported. Use specific
+file paths with `git add` instead.
 
 ## Pre-commit Checklist
 
 Before committing, verify:
 
-- [ ] On correct branch (not `main` or `master` unless explicitly intended)
+- [ ] On correct branch - **MUST NOT be `main` or `master`** (create feature branch first: `git checkout -b <type>/<short-description>`)
 - [ ] Changes are related to a single logical change (atomic commit)
 - [ ] All changes are intentional (no debug code, console.logs)
 - [ ] No secrets, credentials, or sensitive data
@@ -451,5 +464,6 @@ Before committing, verify:
 ## References
 
 - [Conventional Commits](https://www.conventionalcommits.org/)
-- [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/) by Chris Beams
+- [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/)
+  by Chris Beams
 - [Git Commit Best Practices](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project)
