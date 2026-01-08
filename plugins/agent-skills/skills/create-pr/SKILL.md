@@ -70,7 +70,7 @@ git push -u origin HEAD
 
 - All changes are committed
 - Branch is pushed to remote
-- Branch name follows conventions (see **create-branch** skill)
+- Branch name follows conventions: `<type>/<short-description>` (e.g., `feat/add-oauth`, `fix/null-pointer`). See **create-branch** skill for details.
 - No unintended changes are included
 - Branch is up to date with base branch if needed
 

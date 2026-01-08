@@ -31,23 +31,19 @@ git branch --show-current
 
 ### Create Feature Branch
 
-**If on `main` or `master`, create a feature branch first:**
+**CRITICAL: If on `main` or `master`, you MUST create a feature branch first before committing.**
 
-See the **create-branch** skill for detailed branch naming conventions. Branch
-names should follow the pattern: `<type>/<short-description>` where type matches
-the commit type.
-
-**Quick reference:**
-
-- `feat/add-user-auth` - New feature
-- `fix/null-pointer-error` - Bug fix
-- `ref/extract-validation` - Refactoring
-- `test/add-integration-tests` - Tests
+Branch names follow the pattern: `<type>/<short-description>`
+- Type matches commit type (feat, fix, ref, test, etc.)
+- Description is 2-4 words, lowercase, hyphen-separated
+- Examples: `feat/add-user-auth`, `fix/null-pointer`, `ref/extract-validation`
 
 ```bash
-# Create and switch to new branch (see create-branch skill for details)
+# Create and switch to new branch
 git checkout -b <type>/<short-description>
 ```
+
+See the **create-branch** skill for complete branch naming conventions.
 
 **Example:**
 
@@ -56,7 +52,7 @@ git checkout -b <type>/<short-description>
 git branch --show-current  # main
 git commit -m "feat: Add user authentication"  # Don't do this!
 
-# Good - create feature branch first (see create-branch skill)
+# Good - create feature branch first
 git branch --show-current  # main
 git checkout -b feat/add-user-auth
 git commit -m "feat(auth): Add user authentication"
@@ -452,7 +448,7 @@ file paths with `git add` instead.
 
 Before committing, verify:
 
-- [ ] On correct branch (not `main` or `master` unless explicitly intended)
+- [ ] On correct branch - **MUST NOT be `main` or `master`** (create feature branch first: `git checkout -b <type>/<short-description>`)
 - [ ] Changes are related to a single logical change (atomic commit)
 - [ ] All changes are intentional (no debug code, console.logs)
 - [ ] No secrets, credentials, or sensitive data
